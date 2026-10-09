@@ -120,6 +120,30 @@
     margin-bottom: 24px;
   }
 
+  /* ===== About ===== */
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .about img {
+    width: 200px;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .about p {
+    color: #666;
+    font-size: 0.98rem;
+  }
+
+  .about p + p {
+    margin-top: 12px;
+  }
+
   /* ===== Projects ===== */
   .project {
     display: flex;
@@ -196,6 +220,11 @@
       margin-left: 0;
     }
 
+    .about {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .project {
       flex-direction: column;
       align-items: flex-start;
@@ -209,6 +238,7 @@
   <div class="container">
     <a class="logo" href="#">Tora Alvaro</a>
     <ul>
+      <li><a href="#about">Tentang</a></li>
       <li><a href="#projects">Proyek</a></li>
       <li><a href="#contact">Kontak</a></li>
     </ul>
@@ -221,12 +251,31 @@
   <header class="hero">
     <h1>Hello World</h1>
     <p>
-      Saya Tora Alvaro — mahasiswa Informatika di Universitas Pelita Harapan
-      (angkatan 2024). Tertarik di machine learning dan mobile development.
+      Mahasiswa Informatika di Universitas Pelita Harapan yang tertarik di
+      machine learning dan mobile development.
     </p>
     <a class="btn" href="#projects">Lihat Karya</a>
     <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
   </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <div class="about">
+      <img src="about.jpg" alt="Tora Alvaro">
+      <div>
+        <p>
+          Saya Tora Alvaro — mahasiswa Informatika di Universitas Pelita
+          Harapan (angkatan 2024). Tertarik di machine learning dan mobile
+          development.
+        </p>
+        <p>
+          Beberapa hasil kerjaan ada di bagian proyek. Di luar kuliah, suka
+          explore tooling dan automation.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section id="projects">
