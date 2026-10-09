@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello World — Portfolio</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ===== Nav ===== */
+  nav {
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #111;
+    text-decoration: none;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  nav a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.15s ease;
+  }
+
+  nav a:hover {
+    color: #111;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 80px 0 64px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    color: #666;
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  /* ===== Tombol (satu-satunya elemen berwarna) ===== */
+  .btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 28px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .btn-outline {
+    background: #fff;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+  }
+
+  /* ===== Section ===== */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  /* ===== Cards ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 22px;
+  }
+
+  .card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .card p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  /* ===== Projects ===== */
+  .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+    text-decoration: none;
+    color: #111;
+  }
+
+  .project h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+    transition: color 0.15s ease;
+  }
+
+  .project:hover h3 {
+    color: #2563eb;
+  }
+
+  .project p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  /* ===== Contact ===== */
+  .contact {
+    text-align: center;
+  }
+
+  .contact p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 28px 0;
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 16px;
+    }
+
+    .hero {
+      padding: 56px 0 48px;
+    }
+
+    .project {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="logo" href="#">Logo</a>
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Hello World</h1>
+    <p>
+      Placeholder tagline — misalnya: "Full-stack developer yang suka bikin
+      tooling &amp; automation."
+    </p>
+    <a class="btn" href="#projects">Lihat Karya</a>
+    <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>Tentang</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Skill Satu</h3>
+        <p>Deskripsi singkat skill atau layanan yang ditawarkan.</p>
+      </div>
+      <div class="card">
+        <h3>Skill Dua</h3>
+        <p>Deskripsi singkat — satu atau dua kalimat aja cukup.</p>
+      </div>
+      <div class="card">
+        <h3>Skill Tiga</h3>
+        <p>Deskripsi singkat. Ganti semua placeholder sesuai kebutuhan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Proyek</h2>
+
+    <a class="project" href="#" target="_blank" rel="noopener">
+      <div>
+        <h3>Nama Proyek Satu</h3>
+        <p>Deskripsi singkat proyek — apa yang dibikin dan pake apa.</p>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a class="project" href="#" target="_blank" rel="noopener">
+      <div>
+        <h3>Nama Proyek Dua</h3>
+        <p>Deskripsi singkat proyek placeholder lainnya.</p>
+      </div>
+      <span>→</span>
+    </a>
+
+    <a class="project" href="#" target="_blank" rel="noopener">
+      <div>
+        <h3>Nama Proyek Tiga</h3>
+        <p>Deskripsi singkat proyek placeholder ketiga.</p>
+      </div>
+      <span>→</span>
+    </a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Ngobrol Yuk</h2>
+    <p>Placeholder — misalnya: open untuk kolaborasi atau proyek freelance.</p>
+    <a class="btn" href="mailto:hello@example.com">hello@example.com</a>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Nama Lu. Dibikin dengan HTML + CSS doang.</p>
+</footer>
+
+</body>
+</html>
