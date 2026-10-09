@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello World — Portfolio</title>
+<title>Tora Alvaro — Portfolio</title>
 <style>
   * {
     margin: 0;
@@ -106,6 +106,7 @@
     background: #fff;
     color: #2563eb;
     border: 1px solid #2563eb;
+    margin-left: 10px;
   }
 
   /* ===== Section ===== */
@@ -117,29 +118,6 @@
   section h2 {
     font-size: 1.5rem;
     margin-bottom: 24px;
-  }
-
-  /* ===== Cards ===== */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-  }
-
-  .card {
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    padding: 22px;
-  }
-
-  .card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-  }
-
-  .card p {
-    color: #666;
-    font-size: 0.95rem;
   }
 
   /* ===== Projects ===== */
@@ -179,6 +157,24 @@
     margin-bottom: 20px;
   }
 
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .contact-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-links a:hover {
+    text-decoration: underline;
+  }
+
   footer {
     border-top: 1px solid #e5e5e5;
     padding: 28px 0;
@@ -196,6 +192,10 @@
       padding: 56px 0 48px;
     }
 
+    .btn-outline {
+      margin-left: 0;
+    }
+
     .project {
       flex-direction: column;
       align-items: flex-start;
@@ -207,9 +207,8 @@
 
 <nav>
   <div class="container">
-    <a class="logo" href="#">Logo</a>
+    <a class="logo" href="#">Tora Alvaro</a>
     <ul>
-      <li><a href="#about">Tentang</a></li>
       <li><a href="#projects">Proyek</a></li>
       <li><a href="#contact">Kontak</a></li>
     </ul>
@@ -222,56 +221,29 @@
   <header class="hero">
     <h1>Hello World</h1>
     <p>
-      Placeholder tagline — misalnya: "Full-stack developer yang suka bikin
-      tooling &amp; automation."
+      Saya Tora Alvaro — mahasiswa Informatika di Universitas Pelita Harapan
+      (angkatan 2024). Tertarik di machine learning dan mobile development.
     </p>
     <a class="btn" href="#projects">Lihat Karya</a>
     <a class="btn btn-outline" href="#contact">Hubungi Saya</a>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>Tentang</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Skill Satu</h3>
-        <p>Deskripsi singkat skill atau layanan yang ditawarkan.</p>
-      </div>
-      <div class="card">
-        <h3>Skill Dua</h3>
-        <p>Deskripsi singkat — satu atau dua kalimat aja cukup.</p>
-      </div>
-      <div class="card">
-        <h3>Skill Tiga</h3>
-        <p>Deskripsi singkat. Ganti semua placeholder sesuai kebutuhan.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Projects -->
   <section id="projects">
     <h2>Proyek</h2>
 
-    <a class="project" href="#" target="_blank" rel="noopener">
+    <a class="project" href="https://github.com/toraaxlv/ConvNeXt-Exploration" target="_blank" rel="noopener">
       <div>
-        <h3>Nama Proyek Satu</h3>
-        <p>Deskripsi singkat proyek — apa yang dibikin dan pake apa.</p>
+        <h3>ConvNeXt Exploration</h3>
+        <p>Analisis sensitivitas arsitektur ConvNeXt-Tiny untuk klasifikasi penyakit daun padi — 8 konfigurasi transfer learning pada dataset 3.353 gambar.</p>
       </div>
       <span>→</span>
     </a>
 
-    <a class="project" href="#" target="_blank" rel="noopener">
+    <a class="project" href="https://github.com/toraaxlv/NutriShare" target="_blank" rel="noopener">
       <div>
-        <h3>Nama Proyek Dua</h3>
-        <p>Deskripsi singkat proyek placeholder lainnya.</p>
-      </div>
-      <span>→</span>
-    </a>
-
-    <a class="project" href="#" target="_blank" rel="noopener">
-      <div>
-        <h3>Nama Proyek Tiga</h3>
-        <p>Deskripsi singkat proyek placeholder ketiga.</p>
+        <h3>NutriShare</h3>
+        <p>Aplikasi mobile tracking nutrisi harian dengan Flutter dan FastAPI — pencatatan makanan, kalkulasi kalori &amp; makronutrien, dan target nutrisi personal.</p>
       </div>
       <span>→</span>
     </a>
@@ -280,14 +252,18 @@
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Ngobrol Yuk</h2>
-    <p>Placeholder — misalnya: open untuk kolaborasi atau proyek freelance.</p>
-    <a class="btn" href="mailto:hello@example.com">hello@example.com</a>
+    <p>Open untuk kolaborasi atau proyek freelance.</p>
+    <div class="contact-links">
+      <a href="mailto:tora.alvaro@gmail.com">tora.alvaro@gmail.com</a>
+      <span>·</span>
+      <a href="https://instagram.com/toraaxlv" target="_blank" rel="noopener">Instagram @toraaxlv</a>
+    </div>
   </section>
 
 </div>
 
 <footer>
-  <p>© 2026 Nama Lu. Dibikin dengan HTML + CSS doang.</p>
+  <p>© 2026 Tora Alvaro. Dibikin dengan HTML + CSS doang.</p>
 </footer>
 
 </body>
