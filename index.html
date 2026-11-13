@@ -336,6 +336,7 @@
 
   .pv1 { background: radial-gradient(125% 135% at 22% 8%, rgba(99, 70, 245, 0.55), rgba(20, 20, 46, 0.25) 55%), linear-gradient(135deg, #171a35, #0d1024); }
   .pv2 { background: radial-gradient(125% 135% at 80% 12%, rgba(139, 92, 246, 0.5), rgba(20, 20, 46, 0.25) 55%), linear-gradient(135deg, #1a1430, #0d1024); }
+  .pv3 { background: radial-gradient(125% 135% at 70% 10%, rgba(16, 185, 129, 0.42), rgba(16, 20, 26, 0.2) 55%), linear-gradient(135deg, #10251f, #0b1220); }
 
   .pv-num {
     position: absolute; top: 18px; left: 24px; z-index: 1;
@@ -361,6 +362,24 @@
   }
 
   .shot img { display: block; width: 100%; }
+
+  /* kemeipro storefront slideshow */
+  .shot .slides { position: relative; aspect-ratio: 1440 / 1000; background: #fff; }
+  .shot .slides img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: top left;
+    opacity: 0; transition: opacity 0.8s ease;
+  }
+  .shot .slides img.active { opacity: 1; }
+  .slide-dots {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; z-index: 2;
+  }
+  .slide-dots span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(0, 0, 0, 0.22); cursor: pointer; transition: background 0.25s, transform 0.25s;
+  }
+  .slide-dots span.on { background: rgba(0, 0, 0, 0.7); transform: scale(1.2); }
 
   .project-card:hover .shot { transform: translateY(-10px); }
 
@@ -639,8 +658,8 @@ tora = <span class="fn">Developer</span>()
       <div class="project-visual pv2 showcase">
         <span class="pv-num">02</span>
         <div class="phones">
-          <div class="phone p1"><img src="nutrishare-demo.png" alt="NutriShare — daily diary screen"></div>
-          <div class="phone p2"><img src="nutrishare-demo.png" alt="NutriShare — meal log screen"></div>
+          <div class="phone p1"><img src="nutrishare-demo.png" alt="NutriShare — diary harian"></div>
+          <div class="phone p2"><img src="nutrishare-home.png" alt="NutriShare — home, insight, dan energy history"></div>
         </div>
       </div>
       <div class="project-body">
@@ -657,6 +676,36 @@ tora = <span class="fn">Developer</span>()
           <span class="tag">Flutter</span>
           <span class="tag">FastAPI</span>
           <span class="tag">Mobile</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="project-card reveal" href="https://www.kemeipro.id" target="_blank" rel="noopener">
+      <div class="project-visual pv3">
+        <span class="pv-num">03</span>
+        <div class="shot">
+          <div class="slides" data-interval="4000">
+            <img class="active" src="kemeipro-preview.png" alt="kemeipro.id — storefront hero">
+            <img src="kemeipro-catalog.png" alt="kemeipro.id — katalog produk">
+          </div>
+          <div class="slide-dots"><span class="on"></span><span></span></div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-head">
+          <h3>kemeipro.id</h3>
+          <span class="arrow">&rarr;</span>
+        </div>
+        <p>
+          A direct-to-customer storefront for a family retail business — product
+          catalog, cart, QRIS checkout, and shipping tracking, replacing
+          WhatsApp-based ordering end to end.
+        </p>
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">HTMX</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Midtrans</span>
         </div>
       </div>
     </a>
@@ -717,6 +766,36 @@ tora = <span class="fn">Developer</span>()
   }, { threshold: 0.15 });
 
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // project-card slideshow
+  document.querySelectorAll(".slides").forEach((box) => {
+    const imgs = Array.from(box.querySelectorAll("img"));
+    if (imgs.length < 2) return;
+    const dots = Array.from(box.parentElement.querySelectorAll(".slide-dots span"));
+    const ms = parseInt(box.dataset.interval, 10) || 4000;
+    let i = 0;
+    let timer;
+
+    const show = (n) => {
+      i = (n + imgs.length) % imgs.length;
+      imgs.forEach((img, k) => img.classList.toggle("active", k === i));
+      dots.forEach((d, k) => d.classList.toggle("on", k === i));
+    };
+    const start = () => { timer = setInterval(() => show(i + 1), ms); };
+    const stop = () => clearInterval(timer);
+
+    dots.forEach((d, k) => d.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      show(k);
+      stop();
+      start();
+    }));
+
+    box.parentElement.addEventListener("mouseenter", stop);
+    box.parentElement.addEventListener("mouseleave", start);
+    start();
+  });
 </script>
 
 </body>
